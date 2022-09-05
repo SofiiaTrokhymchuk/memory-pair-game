@@ -8,6 +8,7 @@ export function appendFlipCardsHandler(){
     let firstFlippedCard, secondFlippedCard = null;
     cardsSection.addEventListener('click', function(event){
         const clickedCard = event.target.closest('.card-container');
+        if(!clickedCard) return;
         clickedCard.classList.add('flipped');
         if(!firstCardIsFlipping){
             firstCardIsFlipping = true;
@@ -28,18 +29,18 @@ function checkIfCardsMatch(firstCard, secondCard){
             setTimeout(() => {
                 firstCard.classList.add('matched');
                 secondCard.classList.add('matched');
-            }, 600);
+            }, 500);
     }else{
         setTimeout(() => {
             firstCard.classList.remove('flipped');
             secondCard.classList.remove('flipped');
-        }, 600);
+        }, 500);
     }
 }
 
 function checkIfAllPairsMatched(uniqueCardsAmount, matchedCardsAmount){
     if(uniqueCardsAmount === matchedCardsAmount){
         pairsFound = 0;
-        setTimeout(()=> restartModalWindowHandler(), 600);     
+        setTimeout(()=> restartModalWindowHandler(), 500);     
     }
 }

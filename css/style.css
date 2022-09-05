@@ -67,11 +67,14 @@ body{
     transform: scale(1);
     transform-style: preserve-3d;
     transition: transform 0.5s, visibility 0.5s;
+    -webkit-user-select: none;   
+    -moz-user-select: none;      
+    -ms-user-select: none;       
+    user-select: none;           
 }
 
 .card-container:hover{
     transform: scale(0.98);
-
 }
 
 .card-container.flipped{
@@ -138,7 +141,9 @@ body{
     color: var(--main-bg-color);
     border: none;
     border-radius: 5px;
+    font-size: 1rem;
     font-weight: 700;
+    cursor: pointer;
 }
 
 @media (max-width: 950px){
