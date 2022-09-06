@@ -6,7 +6,7 @@ export function appendFlipCardsHandler(){
     const cardsSection = document.querySelector('.cards-section');
     let firstCardIsFlipping = false;
     let firstFlippedCard, secondFlippedCard = null;
-    cardsSection.addEventListener('click', function(event){
+    cardsSection.addEventListener('mousedown', function(event){
         const clickedCard = event.target.closest('.card-container');
         if(!clickedCard) return;
         clickedCard.classList.add('flipped');
